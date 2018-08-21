@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Twig Condicionales</title>
+</head>
+<body>
+    <h1>Condicionales</h1>
+    <p>
+        {# Verifica si un array no está vacío #}
+        {% if user %}
+            Hola {{ user.name|title }}
+        {% endif %}
+        {# if (online==true) #}
+        {% if online %}
+            <p>El sitio está online.</p>
+        {% else %}
+            <p>Nuestro sitio está en mantenimiento, regresa más tarde.</p>
+        {% endif %} 
+        
+        {# Verifica si una variable está DEFINIDA #}
+        {% if user.website is defined %}
+            <p>Email: {{ user.email }}</p>
+        {% else %}
+            <p>La variable no está definida.</p>
+        {% endif %}
+
+    </p>  
+</body>
+</html>
