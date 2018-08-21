@@ -1,10 +1,15 @@
 <?php 
+
 require_once './vendor/autoload.php';
 
-$loader = new Twig_Loader_Array(array(
-    'index' => 'Hello {{ name }}!',
-));
-$twig = new Twig_Environment($loader);
+$loader = new Twig_Loader_Filesystem('./views');
 
-echo $twig->render('index', array('name' => 'Fabien'));
+$twig = new Twig_Environment($loader,[]);
+
+    $who= 'gente del futuro';
+    $hello= 'sean todos bienvenidos ';
+
+
+echo $twig->render('index.twig', compact('who','hello'));
+
 ?>
