@@ -1,16 +1,26 @@
-
+{% set age=26 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Twig</title>
+    <title>Aprendiendo Twig</title>
 </head>
 <body>
-    {# #}
-<h1>Mi nombre es {{ person['name'] }} y tengo {{ person.age }}.</h1>
-<p>Y trabajo en {{ attribute(person, 'name-company') }}</p>
-
+    {# este es un comentario #}
+<h1>Datos de usuario</h1>
+<p>Nombre : {{ user.name|striptags|title }}</p>
+<p>Apellidos : {{ user.lastname|upper }}</p>
+<p>Edad : {{ age }}</p>
+<p>Email : {{ user.email }}</p>
+<p>
+    {% filter title|striptags %}
+        Esto es un texto <p>adsfdasfads </p>que va a ser capitalizado. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nostrum architecto natus adipisci. Velit eligendi vero maiores, explicabo quasi sint facere iusto quos cum voluptatibus, deserunt dignissimos quibusdam delectus illo!
+    {% endfilter %}
+</p>
+<code>
+    {{ user|json_encode() }}
+</code>
 </body>
 </html>

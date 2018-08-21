@@ -9,12 +9,11 @@ $twig = new Twig_Environment($loader,[]);
 $who= 'gente del futuro';
 $hello= 'sean todos bienvenidos ';
 
-$person = [
-    'name' =>'Javi',
-    'age' => 26,
-    'name-company' =>'Pampling'
+$user = [
+    'name' =>'javier',
+    'lastname' => 'aliaga rodriguez',
+    'email' => 'javi@gmail.com'
 ];
 
-echo $twig->render('index.twig', compact('person'));
+echo $twig->render('index.twig', compact('user'));
 
-?>
