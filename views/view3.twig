@@ -10,11 +10,29 @@
 <h1>Ciclo for en twig</h1>
 <h2>Personas</h2>
 <ul>
-
     {% for item in people%}
         <li>{{ item }}</li>
     {% endfor %}
 </ul>
-    
+
+<h2>Secuencia de números</h2>
+<ul>
+    {% for i in 0..10 %}
+        <li>{{ i }}</li>
+    {% endfor %}
+</ul>
+
+
+<h2>Secuencia de letras</h2>
+{% set counter = 0 %}
+{% set i = 0 %}
+<ul>
+    {% for letter in 'a'|upper..'z'|upper %}
+    {% set i = i + 1 %}
+        <li>{{ letter }} </li>
+    {% endfor %}
+    <li>Final {{ i }}</li>
+</ul>
+
 </body>
 </html>
